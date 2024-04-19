@@ -1,0 +1,13 @@
+name: blast
+networks:
+- id: 81457
+  start_block: 0
+  contracts:
+  - name: HyperBlastV2Locker
+    address:
+    - 0x5520A95E8a8882ADE68F78FC91f1378B94120F36
+    handler: src/EventHandlers.ts
+    events:
+    - event: OnDeposit(address lpToken, address user, uint256 amount, uint256 lockDate, uint256 unlockDate)
+    - event: OnWithdraw(address lpToken, uint256 amount)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)

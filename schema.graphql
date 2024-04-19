@@ -1,0 +1,33 @@
+type EventsSummary {
+  id: ID!
+  hyperBlastV2Locker_OnDeposit: [HyperBlastV2Locker_OnDeposit!]! @derivedFrom(field: "eventsSummary")
+  hyperBlastV2Locker_OnDepositCount: BigInt!
+  hyperBlastV2Locker_OnWithdraw: [HyperBlastV2Locker_OnWithdraw!]! @derivedFrom(field: "eventsSummary")
+  hyperBlastV2Locker_OnWithdrawCount: BigInt!
+  hyperBlastV2Locker_OwnershipTransferred: [HyperBlastV2Locker_OwnershipTransferred!]! @derivedFrom(field: "eventsSummary")
+  hyperBlastV2Locker_OwnershipTransferredCount: BigInt!
+}
+
+type HyperBlastV2Locker_OnDeposit {
+  id: ID!
+  lpToken: String!
+  user: String!
+  amount: BigInt!
+  lockDate: BigInt!
+  unlockDate: BigInt!
+  eventsSummary: String!
+}
+
+type HyperBlastV2Locker_OnWithdraw {
+  id: ID!
+  lpToken: String!
+  amount: BigInt!
+  eventsSummary: String!
+}
+
+type HyperBlastV2Locker_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+  eventsSummary: String!
+}
